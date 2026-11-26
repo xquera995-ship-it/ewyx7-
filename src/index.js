@@ -14,10 +14,12 @@ const {
 const { isFiltered } = require('./lib/filter');
 const { configFor, log, can, admin, parseTime, addXp } = require('./lib/helpers');
 
+
 if (!process.env.DISCORD_TOKEN || !process.env.MONGODB_URI || !process.env.CLIENT_ID) {
-  console.error('DISCORD_TOKEN, CLIENT_ID ve MONGODB_URI .env içinde zorunludur.');
+  console.error('DISCORD_TOKEN, CLIENT_ID ve MONGODB_URI Railway Variables bölümünde tanımlanmalıdır.');
   process.exit(1);
 }
+
 
 const client = new Client({
   intents: [
